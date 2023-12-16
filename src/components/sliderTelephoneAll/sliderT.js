@@ -276,6 +276,7 @@ const SliderTelephone = () => {
       return tel >= el.min && tel <= el.max;
     });
   };
+
   const mapMoreLess = new Map([
     [
       {
@@ -342,24 +343,27 @@ const SliderTelephone = () => {
     ],
   ]);
 
-  console.log("mapMoreLess.get(0) : ", mapMoreLess.get(moreLessFn(0)));
+  // console.log("mapMoreLess.get(0) : ", mapMoreLess.get(moreLessFn(0)));
 
   const operatorTelFn = (tel) => {
     return Array.from(mapOperatorTel.keys()).find((el) => {
       return tel >= el.min && tel <= el.max;
     });
   };
+  // console.log("??? : ", telFn(current));
+  // console.log("??? : ", mapTelephone.get(telFn(current)));
+  // console.log("??? {}: ", mapTelephone.get({ min: 0, max: 10 }));
   // console.log("fn : ", operatorTelFn(1));
-  console.log(
-    "mapOperatorTel.get(operatorTelFn(1) : ",
-    mapOperatorTel.get(operatorTelFn(1))
-  );
+  // console.log(
+  //   "mapOperatorTel.get(operatorTelFn(1) : ",
+  //   mapOperatorTel.get(operatorTelFn(1))
+  // );
   // console.log("fn : ", mapOperatorTel.keys());
   return (
     <div>
       <h1>--- SliderTelephone All ---</h1>
       <div>
-        {ArrFromFind ? <h1>{mapWeather.get(ArrFromFind).alt}</h1> : "SASS"}
+        {/* {ArrFromFind ? <h1>{mapWeather.get(ArrFromFind).alt}</h1> : "SASS"} */}
         <h1>
           My Telephone +38
           {telFn(current) ? mapTelephone.get(telFn(current)) : "000000000"}
@@ -377,68 +381,6 @@ const SliderTelephone = () => {
         />
         <button onClick={() => dispatch(minus())}> - </button>
         <button onClick={() => dispatch(plus())}> + </button>
-      </div>
-      <div>
-        <h1>--- SliderTelephone ---</h1>
-        <div className="wrapperOperator">
-          <select
-            className="selectSlider"
-            onChange={(e) => dispatch(selectChange(e))}>
-            <option value={"050"}>Vodafone 050</option>
-            <option value={"066"}>Vodafone 066</option>
-            <option value={"095"}>Vodafone 095</option>
-            <option value={"099"}>Vodafone 099</option>
-            <option value={"063"}>Life 063</option>
-            <option value={"063"}>Life 073</option>
-            <option value={"093"}>Life 093</option>
-            <option value={"067"}>Kyivstar 067</option>
-            <option value={"068"}>Kyivstar 068</option>
-            <option value={"096"}>Kyivstar 096</option>
-            <option value={"097"}>Kyivstar 097</option>
-            <option value={"098"}>Kyivstar 098</option>
-          </select>
-          <h1> My Telephone : +38{operator.code} </h1>
-          {operatorTelFn(operator.current) ? (
-            <h1>{mapOperatorTel.get(operatorTelFn(operator.current))}</h1>
-          ) : (
-            "Error"
-          )}
-          <h1> {operator.current} </h1>
-        </div>
-        <input
-          className="inputTel"
-          type="range"
-          min={operator.min}
-          max={operator.max}
-          value={operator.current}
-          onChange={(e) => dispatch(changeOperator(e))}
-        />
-      </div>
-      <div className="more less">
-        <h1> --- More or Less ---</h1>
-        <div className="moreLess">
-          <h1>My Telephone : +380</h1>
-          <h1>
-            {console.log("moreLess.current ??? : ", moreLess.current)}
-            {console.log(
-              "moreLessFn(moreLess.current) ??? : ",
-              moreLessFn(moreLess.current)
-            )}
-            {moreLessFn(moreLess.current)
-              ? mapMoreLess.get(moreLessFn(moreLess.current))
-              : "asd"}
-            {moreLess.current}
-          </h1>
-        </div>
-        <button className="mlButton" onClick={() => dispatch(moreClick())}>
-          More
-        </button>
-        <button className="mlButton" onClick={() => dispatch(lessClick())}>
-          Less
-        </button>
-        <button className="mlButton" onClick={() => dispatch(defClick())}>
-          Def
-        </button>
       </div>
     </div>
   );

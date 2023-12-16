@@ -6,7 +6,7 @@ import reportWebVitals from "./reportWebVitals";
 
 import { Provider } from "react-redux";
 // import { store } from "./components/sliderRedux/sliderStore";
-import { store } from "./components/sliderTelephone/storeT";
+import { store } from "./components/sliderTelephoneAll/storeT";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

@@ -1,0 +1,32 @@
+/* src/components/DialPhone.css */
+.dial-phone {
+  width: 300px;
+  margin: auto;
+  text-align: center;
+  padding: 20px;
+}
+
+.dial-number {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.dial-pad {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+button {
+  font-size: 18px;
+  padding: 10px;
+  width: 60px;
+  height: 60px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #eee;
+}

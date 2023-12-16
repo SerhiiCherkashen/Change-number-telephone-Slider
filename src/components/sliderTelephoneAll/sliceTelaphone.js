@@ -54,32 +54,6 @@ const telephoneSlice = createSlice({
       //   state.current = state.current;
       state.current -= 1;
     },
-    moreClick: (state) => {
-      state.moreLess.countClick += 1;
-
-      state.moreLess.countClick < 2
-        ? (state.moreLess.countClick += 0)
-        : (state.moreLess.min = state.moreLess.current);
-      state.moreLess.current = Math.round(
-        (state.moreLess.min + state.moreLess.max) / 2
-      );
-    },
-    lessClick: (state) => {
-      state.moreLess.countClick += 1;
-
-      state.moreLess.countClick < 2
-        ? (state.moreLess.countClick += 0)
-        : (state.moreLess.max = state.moreLess.current);
-      state.moreLess.current = Math.round(
-        (state.moreLess.min + state.moreLess.max) / 2
-      );
-    },
-    defClick: (state) => {
-      state.moreLess.min = 0;
-      state.moreLess.max = 999999999;
-      state.moreLess.current = 0;
-      state.moreLess.countClick = 0;
-    },
   },
 });
 

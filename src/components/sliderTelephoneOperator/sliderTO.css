@@ -1,0 +1,14 @@
+.selectSlider {
+  margin-right: 60px;
+  border-radius: 30px;
+  font-size: 30px;
+  height: 60px;
+}
+
+.wrapperOperator {
+  display: flex;
+  justify-content: center;
+}
+.inputTel {
+  width: 95%;
+}

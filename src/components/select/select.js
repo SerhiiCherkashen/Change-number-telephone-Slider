@@ -13,12 +13,11 @@ const Select = () => {
   const [i, setI] = useState(0);
   const [j, setJ] = useState(0);
 
-  const send = () => {};
   return (
     <div>
       <div>
         <h1>Введите свой номер телефона</h1>
-        +38(
+        <span style={{ fontSize: "30px", fontWeight: "500" }}>+38(</span>
         <select onChange={(e) => setA(e.target.value)} className="0">
           <option>0</option>
           <option>1</option>
@@ -55,7 +54,7 @@ const Select = () => {
           <option>8</option>
           <option>9</option>
         </select>
-        )
+        <span style={{ fontSize: "30px", fontWeight: "500" }}>)</span>
         <select onChange={(e) => setD(e.target.value)} className="0">
           <option>0</option>
           <option>1</option>
@@ -141,18 +140,36 @@ const Select = () => {
           <option>9</option>
         </select>
         <button
+          style={{
+            width: "100px",
+            height: "40px",
+            fontSize: "30px",
+            fontWeight: "500",
+            borderRadius: "20px",
+            marginLeft: "50px",
+          }}
           onClick={() => {
             setNumber("+38(077)7777777");
           }}>
           Del
         </button>
         <button
+          style={{
+            width: "100px",
+            height: "40px",
+            fontSize: "30px",
+            fontWeight: "500",
+            borderRadius: "20px",
+            marginLeft: "10px",
+          }}
           onClick={() =>
             setNumber(`+38(${a}${b}${c})${d}${e}${f}${g}${h}${i}${j}`)
           }>
           Send
         </button>
-        <div>My fone : {number}</div>
+        <div>
+          <h1>My fone : {number}</h1>
+        </div>
       </div>
     </div>
   );
